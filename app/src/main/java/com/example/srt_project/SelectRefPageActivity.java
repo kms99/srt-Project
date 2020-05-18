@@ -47,6 +47,16 @@ public class SelectRefPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_page);
         mContext = this;
 
+        // 50-58 add
+        download = findViewById(R.id.download);
+
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                download();
+            }
+        });
+
 
         Bundle bundle = getIntent().getExtras();
         if(bundle.getString("update").equals("false")){
