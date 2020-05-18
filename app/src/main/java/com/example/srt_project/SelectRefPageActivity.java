@@ -9,21 +9,35 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
 public class SelectRefPageActivity extends AppCompatActivity {
+
+    Button download;
+    FirebaseStorage firebaseStorage;
+    StorageReference storageReference;
+    StorageReference ref;
 
     private FloatingActionButton floatingActionButton;
     private Context mContext;
@@ -167,6 +181,42 @@ public class SelectRefPageActivity extends AppCompatActivity {
         public int getItemCount() {
             return mData.size() ;
         }
+    }
+
+    public void download(){
+
+        storageReference = firebaseStorage.getInstance().getReference();
+        ref = storageReference.child("result/food.txt");
+
+        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url = uri.toString();
+                downloadFile(SelectRefPageActivity.this, "food", "txt", DIRECTORY_DOWNLOADS,url);
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
+
+    public void downloadFile(SelectRefPageActivity context, String fileName, String fileExtension, String destinationDirectory, String url){
+        DownloadManager downloadManager = (DownloadManager) context.
+                getSystemService(HomeActivity.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse(url);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
+
+        downloadManager.enqueue(request);
+
+
+
     }
 
 
