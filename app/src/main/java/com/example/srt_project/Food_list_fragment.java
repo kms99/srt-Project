@@ -61,7 +61,7 @@ public class Food_list_fragment extends Fragment{
         //식재료 api
         recipe_url="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1/1000";
         // 식재료 가져오기
-        DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"ThisRef")).document("food");
+        DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -94,7 +94,6 @@ public class Food_list_fragment extends Fragment{
 
                 View dialogView = getLayoutInflater().inflate(R.layout.add_dialog,null);
                 final EditText add_foodName = (EditText)dialogView.findViewById(R.id.add_food);
-                final EditText add_foodNum = (EditText)dialogView.findViewById(R.id.add_num);
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setView(dialogView);
                 builder.setPositiveButton("저장", new DialogInterface.OnClickListener() {
@@ -102,10 +101,9 @@ public class Food_list_fragment extends Fragment{
                     public void onClick(DialogInterface dialog, int which) {
 
                         String input_foodName = add_foodName.getText().toString();
-                        Integer input_num = Integer.parseInt(add_foodNum.getText().toString());
 
-                        firebaseFirestore.collection(SharedPref_id.getString(mContext,"ThisRef")).document("food")
-                                .update(input_foodName,input_num)
+                        firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
+                                .update(input_foodName,SharedPref_id.getString(mContext,"user"))
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
@@ -194,10 +192,10 @@ public class Food_list_fragment extends Fragment{
                 for(int i = 0; i<set_recipe.size();i++){
                     Log.d("please",set_recipe.toString());
                 }
-                firebaseFirestore.collection(SharedPref_id.getString(mContext,"ThisRef"))
+                firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef"))
                         .document("recipe")
                         .delete();
-                firebaseFirestore.collection(SharedPref_id.getString(mContext,"ThisRef"))
+                firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef"))
                         .document("recipe")
                         .set(set_recipe);
 
@@ -246,7 +244,7 @@ public class Food_list_fragment extends Fragment{
                         delete_builder.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"ThisRef")).document("food");
+                                DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food");
                                 Map<String,Object> updates = new HashMap<>();
                                 updates.put(mData.get(getAdapterPosition())[0], FieldValue.delete());
                                 docRef.update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -290,7 +288,7 @@ public class Food_list_fragment extends Fragment{
                         if (pos != RecyclerView.NO_POSITION){
                             Intent intent = new Intent(getActivity(), Food_info_Activity.class);
                             intent.putExtra("name",mData.get(pos)[0]);
-                            intent.putExtra("num",mData.get(pos)[1]);
+                            intent.putExtra("user",mData.get(pos)[1]);
                             startActivity(intent);
                             notifyItemChanged(pos);
                         }

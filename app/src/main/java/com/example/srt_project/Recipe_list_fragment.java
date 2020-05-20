@@ -59,7 +59,7 @@ public class Recipe_list_fragment extends Fragment {
         recipe_url = "http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000226_1/1/1000";
 
         //firestore의 recipeid를 사용해 크롤링 후 리스트 띄우기
-        DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"ThisRef")).document("recipe");
+        DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("recipe");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

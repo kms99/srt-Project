@@ -100,36 +100,7 @@ public class SelectRefPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        if (ContextCompat.checkSelfPermission(SelectRefPageActivity.this, Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestCameraPermission();
-        }
-
     }
-
-
-    //카메라 권한한
-   private void requestCameraPermission(){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CAMERA)){
-            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA},1);
-        }else{
-            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA},1);
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 1){
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this,"Permission Granted",Toast.LENGTH_SHORT).show();
-            } else  {
-
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
-            }
-
-        }
-    }
-
 
 
     public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.ViewHolder> {

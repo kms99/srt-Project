@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Info_Activity"></activity>
+        <activity android:name=".RegisterRef_Activity" />
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectRefPageActivity">
-        </activity>
-        <activity android:name=".QR_rec_Activity"></activity>
+        <activity android:name=".SelectRefPageActivity" />
+        <activity android:name=".QR_rec_Activity" />
         <activity android:name=".Recipe_detail_Activity" />
         <activity android:name=".Food_info_Activity" />
         <activity android:name=".HomeActivity" />

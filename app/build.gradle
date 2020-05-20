@@ -50,5 +50,5 @@ dependencies {
     implementation 'com.github.nisrulz:qreader:2.1.2'
     implementation 'com.karumi:dexter:6.1.2'
     implementation 'com.google.android.gms:play-services-vision:20.0.0'
-
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
 }
