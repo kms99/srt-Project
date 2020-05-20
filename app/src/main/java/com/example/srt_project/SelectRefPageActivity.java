@@ -196,8 +196,6 @@ public class SelectRefPageActivity extends AppCompatActivity {
 
         downloadManager.enqueue(request);
 
-
-
     }
 
 

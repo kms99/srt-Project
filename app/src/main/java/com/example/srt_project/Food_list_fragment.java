@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,10 +30,19 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,6 +59,7 @@ public class Food_list_fragment extends Fragment{
     public RecyclerAdapter adapter;
     public String recipe_url;
 
+    private StorageReference mStorageRef;
     private Context mContext;
     HashMap <String,Object> set_recipe;
     @Nullable
@@ -58,6 +70,15 @@ public class Food_list_fragment extends Fragment{
         food_list = new ArrayList<String[]>();
         firebaseFirestore = FirebaseFirestore.getInstance();
         swipeRefreshLayout=viewGroup.findViewById(R.id.swipe_layout);
+
+        try {
+            download();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+            Log.d("test111","실패!!");
+        }
+
         //식재료 api
         recipe_url="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1/1000";
         // 식재료 가져오기
@@ -330,5 +351,42 @@ public class Food_list_fragment extends Fragment{
         public int getItemCount() {
             return mData.size() ;
         }
+    }
+
+    void download () throws IOException {
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference riversRef = mStorageRef.child("result/food.txt");
+        File localFile = File.createTempFile("food", "txt",mContext.getCacheDir());
+        Log.d("test111",localFile.getPath());
+        riversRef.getFile(localFile)
+                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        String line = null; // 한줄씩 읽기
+                        Log.d("test111","성공!!");
+                        try {
+                            BufferedReader buf = new BufferedReader(new FileReader(localFile.getPath()));
+                            while((line=buf.readLine())!=null){
+                                Log.d("test111",line+"\n");
+                                if(line.equals("egg")){
+                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
+                                            .update("계란","");
+
+                                }
+                            }
+                            buf.close();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle failed download
+                // ...
+            }
+        });
     }
 }

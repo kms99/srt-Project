@@ -36,6 +36,15 @@ public class RegisterRef_Activity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED) {
             requestCameraPermission();
         }
+        //저장소
+        if (ContextCompat.checkSelfPermission(RegisterRef_Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestWritePermission();
+        }
+        if (ContextCompat.checkSelfPermission(RegisterRef_Activity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestReadPermission();
+        }
     }
 
     private void requestCameraPermission(){
@@ -43,6 +52,20 @@ public class RegisterRef_Activity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA},1);
         }else{
             ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA},1);
+        }
+    }
+    private void requestReadPermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_EXTERNAL_STORAGE)){
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        }else{
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        }
+    }
+    private void requestWritePermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        }else{
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
         }
     }
     @Override
