@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(!SharedPref_id.getString(mContext,"user").equals("")){
+                    Log.d("user",SharedPref_id.getString(mContext,"user"));
                     Intent intent = new Intent(mContext,HomeActivity.class);
                     startActivity(intent);
                     finish();

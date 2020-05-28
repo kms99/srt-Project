@@ -36,7 +36,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -58,7 +57,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Food_list_fragment extends Fragment{
+public class My_Food_List extends Fragment{
     ViewGroup viewGroup;
     private RecyclerView myFirestoreList;
     public FirebaseFirestore firebaseFirestore;
@@ -66,14 +65,9 @@ public class Food_list_fragment extends Fragment{
     public SwipeRefreshLayout swipeRefreshLayout;
     public FloatingActionButton floatingActionButton;
     public RecyclerAdapter adapter;
-    public String recipe_url1, recipe_url2,recipe_url3;
-
-    private StorageReference mStorageRef;
-    private ImageView img;
     private Context mContext;
     private String url;
     private String tagName;
-    HashMap <String,Object> set_recipe;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -82,20 +76,6 @@ public class Food_list_fragment extends Fragment{
         food_list = new ArrayList<String[]>();
         firebaseFirestore = FirebaseFirestore.getInstance();
         swipeRefreshLayout=viewGroup.findViewById(R.id.swipe_layout);
-
-
-        try {
-            download();
-        } catch (IOException e) {
-            e.printStackTrace();
-
-            Log.d("test111","실패!!");
-        }
-
-        //식재료 api
-        recipe_url1="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1/1000";
-        recipe_url2="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1001/2000";
-        recipe_url3="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/2001/3000";
 
         // 식재료 가져오기
         DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food");
@@ -106,18 +86,19 @@ public class Food_list_fragment extends Fragment{
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Iterator<String> foods = document.getData().keySet().iterator();
-                        Iterator<Object> food_nums = document.getData().values().iterator();
+                        Iterator<Object> user = document.getData().values().iterator();
                         while (foods.hasNext()){
                             String food = foods.next();
-                            String food_num = food_nums.next().toString();
-                            food_list.add(new String[]{food,food_num});
+                            String food_user = user.next().toString();
+                            if(food_user.equals(SharedPref_id.getString(mContext,"user"))){
+                                food_list.add(new String[]{food,food_user});
+                            }
                         }
                         //리스트 갱신
-                        new Description().execute();
-                                myFirestoreList = viewGroup.findViewById(R.id.firestore_list);
-                                myFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())) ;
-                                adapter = new RecyclerAdapter(food_list) ;
-                                myFirestoreList.setAdapter(adapter) ;
+                        myFirestoreList = viewGroup.findViewById(R.id.firestore_list);
+                        myFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())) ;
+                        adapter = new RecyclerAdapter(food_list) ;
+                        myFirestoreList.setAdapter(adapter) ;
                     }
                 }
             }
@@ -145,7 +126,7 @@ public class Food_list_fragment extends Fragment{
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         FragmentTransaction ft = getFragmentManager().beginTransaction();
-                                        ft.detach(Food_list_fragment.this).attach(Food_list_fragment.this).commit();
+                                        ft.detach(My_Food_List.this).attach(My_Food_List.this).commit();
                                         final Handler handler = new Handler();
                                         handler.postDelayed(new Runnable() {
                                             @Override
@@ -166,7 +147,7 @@ public class Food_list_fragment extends Fragment{
                                         sucessAlert.show();
                                     }
                                 });
-                       dialog.dismiss();
+                        dialog.dismiss();
                     }
                 });
                 builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
@@ -186,7 +167,7 @@ public class Food_list_fragment extends Fragment{
             @Override
             public void onRefresh() {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.detach(Food_list_fragment.this).attach(Food_list_fragment.this).commit();
+                ft.detach(My_Food_List.this).attach(My_Food_List.this).commit();
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -198,61 +179,11 @@ public class Food_list_fragment extends Fragment{
             }
         });
 
+
+
+
+
         return viewGroup;
-    }
-
-    //레시피 갱신
-    private class Description extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected Void doInBackground(Void... voids) {
-            try{
-                set_recipe= new HashMap<>();
-                    Document doc1 = Jsoup.connect(recipe_url1).get();
-                    Document doc2 = Jsoup.connect(recipe_url2).get();
-                    Document doc3 = Jsoup.connect(recipe_url3).get();
-
-                    Elements search_Origns = doc1.select("row");
-                    Log.d("확인","1");
-                    search_Origns.addAll(doc2.select("row"));
-                    Log.d("확인","2");
-                    search_Origns.addAll(doc3.select("row"));
-                    Log.d("확인","3");
-
-                    for(Element search_Orign : search_Origns){
-                            for (int i = 0; i < food_list.size(); i++) {
-                                if (food_list.get(i)[0].equals(search_Orign.select("IRDNT_NM").text())) {
-                                    Log.d("please", search_Orign.select("RECIPE_ID").text());
-                                    set_recipe.put(search_Orign.select("RECIPE_ID").text(), null);
-                                }
-                            }
-                    }
-                for(int i = 0; i<set_recipe.size();i++){
-                    Log.d("please",set_recipe.toString());
-                }
-
-                //레시피 갱신
-                firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef"))
-                        .document("recipe")
-                        .delete();
-                firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef"))
-                        .document("recipe")
-                        .set(set_recipe);
-
-            } catch (IOException e){
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPreExecute(){
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onPostExecute(Void result){
-
-        }
     }
 
 
@@ -265,7 +196,6 @@ public class Food_list_fragment extends Fragment{
             TextView name_text ;
             TextView num_text;
             ImageView img;
-
             ViewHolder(final View itemView) {
                 super(itemView) ;
 
@@ -273,6 +203,7 @@ public class Food_list_fragment extends Fragment{
                 // 뷰 객체에 대한 참조. (hold strong reference)
                 name_text = itemView.findViewById(R.id.name_text) ;
                 num_text = itemView.findViewById(R.id.editional_text) ;
+
                 img = itemView.findViewById(R.id.imageView_food);
 
                 itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -290,7 +221,7 @@ public class Food_list_fragment extends Fragment{
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         FragmentTransaction ft = getFragmentManager().beginTransaction();
-                                        ft.detach(Food_list_fragment.this).attach(Food_list_fragment.this).commit();
+                                        ft.detach(My_Food_List.this).attach(My_Food_List.this).commit();
                                         final Handler handler = new Handler();
                                         handler.postDelayed(new Runnable() {
                                             @Override
@@ -372,87 +303,6 @@ public class Food_list_fragment extends Fragment{
         }
     }
 
-    void download () throws IOException {
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-        StorageReference riversRef = mStorageRef.child("result/food.txt");
-        File localFile = File.createTempFile("food", "txt",mContext.getCacheDir());
-        Log.d("test111",localFile.getPath());
-        riversRef.getFile(localFile)
-                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        String line = null; // 한줄씩 읽기
-                        Log.d("test111","성공!!");
-                        try {
-                            BufferedReader buf = new BufferedReader(new FileReader(localFile.getPath()));
-                            while((line=buf.readLine())!=null){
-                                Log.d("test111",line+"\n");
-                                if(line.equals("egg")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("계란","");
-                                }
-                                else if(line.equals("tofu")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("두부","");
-                                }
-                                else if(line.equals("carrot")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("당근","");
-                                }
-                                else if(line.equals("broccoli")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("브로콜리","");
-                                }
-                                else if(line.equals("zucchini")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("애호박","");
-                                }
-                                else if(line.equals("onion")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("양파","");
-                                }
-                                else if(line.equals("potato")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("감자","");
-                                }
-                                else if(line.equals("garlic")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("마늘","");
-                                }
-                                else if(line.equals("leek")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("대파","");
-                                }
-                                else if(line.equals("avocado")){
-                                    firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("food")
-                                            .update("아보카도","");
-                                }
-                            }
-                            buf.close();
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        riversRef.putFile(Uri.parse("android.resource://"+mContext.getPackageName()+"/"+R.raw.food))
-                                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                    @Override
-                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                        Log.d("성공적", "!!");
-                                    }
-                            });
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle failed download
-                // ...
-            }
-        });
-    }
-
-
     private void parser(String name){
         // 내부 xml파일이용시
         InputStream inputStream = getResources().openRawResource(R.raw.info_food);
@@ -532,4 +382,6 @@ public class Food_list_fragment extends Fragment{
         }
 
     }
+
+
 }

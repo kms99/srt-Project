@@ -4,223 +4,308 @@
         <name>우유</name>
         <expiration>10</expiration>
         <url>https://cdn.pixabay.com/photo/2015/09/05/22/40/glass-925858_960_720.jpg</url>
+        <kcal>100g 당 66kcal</kcal>
+        <detail>단백질과 칼슘이 풍부하며 체내칼슘흡수율이 높다. 다이어트와 고지혈증 개선에 도움을 준다. 콜레스테롤 수치를 낮추는데 도움을 준다. 혈압을 낮추는데 도움을 주어 고혈압 예방 효과가 있다. 빈혈 예방과 피부 개선에 도움을 준다.</detail>
     </food>
     <food>
         <name>두부</name>
         <expiration>3</expiration>
         <url>https://cdn.pixabay.com/photo/2019/03/26/01/14/tofu-4081697_1280.jpg</url>
+        <kcal>100g 당 88kcal</kcal>
+        <detail>칼로리가 적고 포만감이 뛰어나 다이어트에 효과적이다. 고단백 저칼로리 식품이며 변비 개선에 효과적이다. 혈중 콜레스테롤 수치를 조절하는데 도움이 된다. 에스트로겐 수치를 안정시켜주어 여성에게 좋다. 암 발병의 위험을 낮추어준다.</detail>
     </food>
     <food>
         <name>치즈</name>
         <expiration>180</expiration>
         <url>https://cdn.pixabay.com/photo/2017/01/11/19/56/cheese-1972744_1280.jpg</url>
+        <kcal>100g 당 335kcal</kcal>
+        <detail>다량의 칼슘이 들어있어 골다공증 예방에 좋다. 충치예방에 도움이 된다. 비타민 B 성분을 포함하고 있어 지방 연소 효과가 있다. 나트륨이 많이 포함되어 있어 과도한 섭취는 주의해야한다. 비타민 a를 포함하고 있어 시력 강화에 도움을 준다.</detail>
     </food>
     <food>
         <name>계란</name>
         <expiration>20</expiration>
         <url>https://cdn.pixabay.com/photo/2017/03/30/23/03/egg-2189986_1280.jpg</url>
+        <kcal>100g 당 130kcal</kcal>
+        <detail>비타민 A, D, E와 단백질, 아연등을 포함하고 있어 면역력 강화에 좋다. HDL 콜레스테롤이 있어 심장병 위험을 낮춰준다. 13가지 필수 영양소가 들어있는 완전 식품이다. 콜린 성분이 풍부해 기억력 향상에 좋다. 성장기 어린이들 뿐만 아니라 치매 예방에도 도움을 준다.</detail>
     </food>
     <food>
         <name>요구르트</name>
         <expiration>10</expiration>
         <url>http://www.bing.co.kr/upload/product/201711131E3BTY.jpg</url>
+        <kcal>100g 당 65kcal</kcal>
+        <detail>프로바이오틱스를 다량 함유하고 있어 소화기능을 강화시켜준다. 면역력을 강화시켜준다. 단백질과 칼슘이 많아 뼈 건강에 도움을 준다. 암 발생을 억제하는 효과가 있다. 망간이 칼슘의 흡수를 도와 골다공증 예방에 효과적이다.</detail>
     </food>
     <food>
         <name>식빵</name>
         <expiration>3</expiration>
         <url>https://cdn.pixabay.com/photo/2015/12/05/09/19/toast-1077881_1280.jpg</url>
+        <kcal>100g 당 279kcal</kcal>
+        <detail></detail>
     </food>
     <food>
         <name>수박</name>
         <expiration>5</expiration>
         <url>https://cdn.pixabay.com/photo/2017/06/12/14/53/watermelon-2395804_1280.jpg</url>
+        <kcal>100g 당 31kcal</kcal>
+        <detail>칼로리가 낮으며 수분 함량이 매우 높아 적은 양의 섭취로도 쉽게 포만감을 준다. 비타민과 섬유질이 풍부하여 다이어트와 변비 예방에 효과적이다. 수박에 함유된 리코펜이 세포의 노화를 막아준다. 시투툴린이 이뇨작용을 원활하게 하여 노폐물 제거에 도움을 준다. 소화 촉진에 도움을 준다.</detail>
     </food>
     <food>
         <name>바나나</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2018/09/24/20/12/bananas-3700718_1280.jpg</url>
+        <kcal>100g 당 79kcal</kcal>
+        <detail>칼륨이 풍부하여 혈압을 낮춰주고 나트륨 배출에 도움을 준다. 식이섬유가 풍부하여 변비 완화에 도움을 준다. 비타민 C, 비타민 E 등 항산화 작용을 하는 성분이 풍부하다. 마그네슘이 들어있어 불면증에도 효과적이다. 피로회복에 도움을 준다.</detail>
     </food>
     <food>
         <name>포도</name>
         <expiration>3</expiration>
         <url>https://cdn.pixabay.com/photo/2017/02/02/14/04/grapes-2032838_1280.jpg</url>
+        <kcal>100g 당 54kcal</kcal>
+        <detail>철분이 풍부하게 함유되어 있어 빈혈에 도움을 준다. 과당이 많이 함유되어 있어 피로회복에 도움을 준다. 칼륨이 많아 나트륨 배출에 효과적이다. 플라보노이드 성분이 성인병 예방에 도움을 준다. 안토시아닌 성분이 눈 건강에 도움을 준다. </detail>
     </food>
     <food>
         <name>복숭아</name>
         <expiration>4</expiration>
         <url>https://cdn.pixabay.com/photo/2017/09/06/15/08/peach-2721852_1280.jpg</url>
+        <kcal>100g 당 46kcal</kcal>
+        <detail>비타민 A, 비타민 C, 베타카로닌 성분이 풍부하여 피부 주변의 유해물질을 제거해준다. 타닌과 마그네슘 성분이 피부 노화 방지에 도움을 준다. 신경안정 역할을 해주어 숙면에 도움을 준다. 식이 섬유질이 있어 장 건강에 도움을 준다.숙취 해소에 도움을 준다.</detail>
     </food>
     <food>
         <name>참외</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2015/06/19/04/45/melon-814438_1280.jpg</url>
+        <kcal>100g 당 38kcal</kcal>
+        <detail>대부분이 수분으로 이루어져 있으며 식이섬유가 풍부하다. 비타민 C가 풍부하여 피로회복에 도움을 준다. 엽산이 다량 함유되어 있어 태아의 성장에 도움을 준다. 피부 미용에 도움을 준다. 칼륨이 풍부하여 나트륨 등의 노폐물 배출을 촉진시켜준다. 간 기능 개선에 도움을 준다.</detail>
     </food>
     <food>
         <name>아보카도</name>
         <expiration>4</expiration>
         <url>https://cdn.pixabay.com/photo/2016/03/05/19/03/appetite-1238257_1280.jpg</url>
+        <kcal>100g 당 187kcal</kcal>
+        <detail>비타민 E와 C가 다량 함유되어 있다. 칼륨이 혈압을 안정시켜준다. 루테인이 있어 시력을 보호해준다. 엽산이 포함되어 있어 세포의 재생을 돕는다. 몸속의 콜레스테롤을 제거해 혈관 건강에 도움을 준다. 체내 포도당 흡수를 억제해주어 당뇨병에 도움을 준다.</detail>
     </food>
     <food>
         <name>감자</name>
         <expiration>4</expiration>
         <url>https://cdn.pixabay.com/photo/2014/08/06/20/32/potatoes-411975_1280.jpg</url>
+        <kcal>100g 당 53kcal</kcal>
+        <detail>체내의 피로물질을 분해하여 면역체계를 강화시켜준다. 비타민 C가 풍부하여 피부 노화 예방에 효과적이다. 철분이 풍부하게 함유되어 있어 빈혈 예방에 도움을 준다. 칼륨이 풍부하여 혈압을 내려주는 효과가 있다.</detail>
     </food>
     <food>
-        <name>버섯</name>
+        <name>느타리버섯</name>
         <expiration>5</expiration>
         <url>https://cdn.pixabay.com/photo/2018/08/03/13/34/edible-mushroom-3581915_1280.jpg</url>
+        <kcal>100g 당 17kcal</kcal>
+        <detail>비타민과 필수 아미노산 성분이 풍부하다. 혈중 콜레스테롤 수치를 감소시켜준다. 혈액순환 촉진에 도움을 준다. 비타민 D 성분이 노폐물 배출에 도움을 준다. 노화 방지에 효과적이다. 혈압을 안정시켜 고혈압 예방에 도움을 준다.</detail>
     </food>
     <food>
         <name>양파</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2016/05/16/22/47/onions-1397037_1280.jpg</url>
+        <kcal>100g 당 36kcal</kcal>
+        <detail>항산화 성분을 많이 포함하고 있어 몇역 체계 및 혈관 건강에 도움을 준다. 지방합성효소를 억제하여 다이어트에 효과적이다. 인슐린 분비를 촉진시켜 당 대사를 안정화 시킨다. 간 기능 회복에 도움을 준다. 거담작용을 해주어 감기 예방에 효과적이다. 신경을 안정시켜 주어 불면증 퇴치에 도움을 준다.</detail>
     </food>
     <food>
         <name>마늘</name>
         <expiration>12</expiration>
         <url>https://cdn.pixabay.com/photo/2018/02/27/10/46/garlic-3185163_1280.jpg</url>
+        <kcal>100g 당 102kcal</kcal>
+        <detail>향균작용을 하여 면역력 향상에 도움을 준다. 항암효능이 있다. 젖산 생성을 억제하여 피로 감소에 도움을 준다. 해독작용에 도움을 주어 간기능 증진 효과가 있다. 비타민 A,B,C가 다량 함유되어 있다. 콜레스테롤 수치 개선에 도움을 준다. 불안증과 불면증에 도움을 준다.</detail>
     </food>
     <food>
         <name>당근</name>
         <expiration>14</expiration>
         <url>https://cdn.pixabay.com/photo/2016/07/11/00/18/carrots-1508847_1280.jpg</url>
+        <kcal>100g 당 25kcal</kcal>
+        <detail>베타카로닌이 풍부하게 함유되어 있어 면역력 향상에 도움을 준다. 비타민 C 성분이 피로회복에 도움을 준다. 야맹증 예방 및 안구건강 유지에 효과적이다. 인과 칼륨이 있어 정신 활력에 도움을 준다. 식이섬유가 풍부하여 복통이나 변비 개선에 도움을 준다.</detail>
     </food>
     <food>
         <name>오이</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2015/07/28/00/41/cucumbers-863808_1280.jpg</url>
+        <kcal>100g 당 12kcal</kcal>
+        <detail>90% 이상이 수분으로 이루어져 있어 갈증해소에 도움을 준다. 체내 노폐물 배출 작용에 도움을 준다. 소화력 개선과 위 질병 예방에도 효과적이다. 미네랄 성분이 뼈 건강에 도움을 준다. 열량이 낮지만 포만감이 높아 다이어트에 도움을 준다. 비타민 E 성분이 노화 예방에 도움을 준다.</detail>
     </food>
     <food>
         <name>가지</name>
         <expiration>5</expiration>
         <url>https://cdn.pixabay.com/photo/2018/08/29/10/25/bhutan-3639572_1280.jpg</url>
+        <kcal>100g 당 15kcal</kcal>
+        <detail>다양한 항산화 물질이 함유되어 있어 항암 효과에 도움을 준다. 콜레스테롤 수치를 낮춰준다. 피로회복과 변비개선에 도움을 준다. 안토시아닌 물질이 시력과 눈 건강에 도움을 준다. 차가운 성질을 가지고 있어 체온을 내리는데 효과적이다.</detail>
     </food>
     <food>
         <name>애호박</name>
         <expiration>6</expiration>
         <url>https://cdn.pixabay.com/photo/2016/08/30/12/05/zucchini-1630518_1280.jpg</url>
+        <kcal>100g 당 17kcal</kcal>
+        <detail>이뇨작용을 촉진하고 노폐물을 배출하는 효능이 있다. 식이섬유가 풍부하여 변비에 좋다. 소화흡수에 좋은 음식이다. 비타민이 풍부하여 위 건강 강화에 도움을 준다. 레시틴이라는 성분이 있어 뇌의 활동에 도움을 준다. 두뇌 발달과 기억력 증진 효과가 있다.</detail>
     </food>
     <food>
         <name>브로콜리</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2016/08/30/12/05/broccoli-1630519_1280.jpg</url>
+        <kcal>100g 당 38kcal</kcal>
+        <detail>눈 질환 예방에 도움을 준다. 몸속 콜레스테롤 수치를 저하시키는 역할을 한다. 피부의 잡티 제거와 노화 방지에 도움을 준다. 식이섬유가 풍부하며 체중 조절에 도움을 준다. 알레르기와 염증 감소에 효과적이다. 칼슘과 비타민 K가 많아 뼈 건강에 도움을 준다.</detail>
     </food>
     <food>
         <name>양배추</name>
         <expiration>12</expiration>
         <url>https://cdn.pixabay.com/photo/2013/10/04/19/47/kohl-190821_1280.jpg</url>
+        <kcal>100g 당 26kcal</kcal>
+        <detail>지방 함유량이 매우 적고 섬유질의 함유량이 높은 식품이다. 다이어트와 변비 개선에 도움을 준다. 체내 활성산소를 제거해주어 항산화작용을 해준다. 간에 쌓인 유해물질의 해독을 도와준다. 위장 기능 개선에 특히 효과적이다. 겉은 철분, 캄슘, 비타민 A가 풍부하며 속은 비타민 B와 C가 많이 함유되어 있다.</detail>
     </food>
     <food>
         <name>대파</name>
         <expiration>10</expiration>
         <url>https://cdn.pixabay.com/photo/2015/03/30/19/23/green-onion-699943_1280.jpg</url>
+        <kcal>100g 당 22kcal</kcal>
+        <detail>항산화 성분이 다량 함유되어 있으며 당뇨에도 도움을 준다. 노화방지에 도움을 준다. 지방 성분이 많은 요리와 함께 섭취하면 체내 콜레스테롤 흡수 방지에 도움을 준다. 흰 줄기가 있는 부분에는 사과보다 5배 많은 비타민 C가 함유되어 있다. 뿌리에 알라신 성분이 있어 혈액순환을 도와준다.</detail>
     </food>
     <food>
         <name>블루베리</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2015/03/26/09/40/blueberries-690072_1280.jpg</url>
+        <kcal>100g 당 57kcal</kcal>
+        <detail>로돕신의 재합성을 도와 시력을 보호해준다. 비타민 C와 E가 풍부하여 면역력 향상에 효과적이다. 안토시아닌 성분으로 인해 혈관 건강에 탁월한 과일이다. 미네랄 함량이 아주 높고 비타민이 풍부하여 노화방지에 효과적이다. 체내 염분을 배출해주어 고혈압 또는 당뇨 환자에게 좋다.</detail>
     </food>
     <food>
         <name>배</name>
         <expiration>6</expiration>
         <url>https://cdn.pixabay.com/photo/2016/11/17/10/39/times-1831237_1280.jpg</url>
+        <kcal>100g 당 45kcal</kcal>
+        <detail>차가운 성질을 가지는 과일로 몸의 열을 내려주는 역할을 한다. 피로회복과 해독작용에 도움을 준다. 수분 함량이 매우 높고 식이섬유가 풍부하여 다이어트에 도움을 준다. 천식이나 가래, 기침 등의 기관지 증상 완화에 좋은 식품이다. 알코올 분해 성분이 있어 숙취해소에 탁월한 효능이 있다.</detail>
     </food>
     <food>
         <name>사과</name>
         <expiration>21</expiration>
         <url>https://cdn.pixabay.com/photo/2016/11/29/03/23/apples-1867043_1280.jpg</url>
+        <kcal>100g 당 49kcal</kcal>
+        <detail>케르세틴 성분이 뇌세포의 퇴행을 막아준다. 수용성 식이섬유를 포함하고 있어 당뇨병 위험을 줄여준다. 콜레스테롤 수치를 낮추는데 도움을 준다. 항산화 성분이 풍부해 심장질환을 예방해준다. 담석의 형성을 예방해준다. 체내 독소를 제거해주고 피로물질을 빠르게 분해시켜준다. </detail>
     </food>
     <food>
         <name>레몬</name>
         <expiration>21</expiration>
         <url>https://cdn.pixabay.com/photo/2017/02/05/12/31/lemons-2039830_1280.jpg</url>
+        <kcal>100g 당 30kcal</kcal>
+        <detail>비타민이 매우 풍부하며 항산화 작용을 한다. 열량이 낮고 섬유질이 풍부하다. 손상된 피부 개선 및 노화 예방에 도움을 준다. 체내 독소 배출과 체중 감량을 도와준다. 간의 담즙 생성을 활성화 시켜 소화불량, 배탈에 도움이 된다. 철분이 풍부한 음식과 함께 섭취하면 철분의 흡수를 돕는다.</detail>
     </food>
     <food>
         <name>자두</name>
         <expiration>4</expiration>
         <url>https://cdn.pixabay.com/photo/2017/06/22/07/54/plum-2429932_960_720.jpg</url>
+        <kcal>100g 당 26kcal</kcal>
+        <detail>비타민 A와 안토시아닌 성분이 함유되어 있어 안과 질환 개선에 도움을 준다. 피로감 해소와 스트레스 완화에 효과적이다. 철분와 더불어 다양한 영양소가 함유되어 있어 임산부에게 좋다. 세로토닌의 분비를 원활하게 하여 심신 안정에 효과적이다. 비타민의 함유량이 높아 피부 미용에 효과적이다.</detail>
     </food>
     <food>
         <name>소세지</name>
         <expiration>10</expiration>
         <url>https://cdn.pixabay.com/photo/2012/10/01/18/38/grilling-58742_1280.jpg</url>
+        <kcal>100g 당 300kcal</kcal>
+        <detail></detail>
     </food>
     <food>
         <name>고등어</name>
         <expiration>2</expiration>
         <url>https://previews.123rf.com/images/paylessimages/paylessimages1501/paylessimages150174661/46394824-%EA%B3%A0%EB%93%B1%EC%96%B4-%EA%B5%AC%EC%9D%B4.jpg</url>
+        <kcal>100g 당 183kcal</kcal>
+        <detail>오메가-3 지방산이 풍부하여 뇌 기능 향상에 도움을 준다. 혈중 중성지방 수치를 낮추는데 효과가 있으며 심장병 예방에 도움을 준다. 비타민 B군과 철이 많이 포함되어 있어 빈혈에 좋다. DHA와 EPA가 풍부하게 함유되어 있어 기억력 상승에 효과적이다. 셀레늄 성분이 면역력 증진에 도움을 준다. EPA 성분이 혈중 콜레스테롤 수치를 낮춰주는데 효과적이다.</detail>
     </food>
     <food>
         <name>베이컨</name>
         <expiration>14</expiration>
         <url>https://cdn.pixabay.com/photo/2017/08/17/07/55/sizzling-2650322_1280.jpg</url>
+        <kcal>100g 당 540kcal</kcal>
+        <detail></detail>
     </food>
     <food>
         <name>바지락</name>
         <expiration>2</expiration>
         <url>https://cdn.pixabay.com/photo/2017/12/20/03/49/noodles-3029166_1280.jpg</url>
+        <kcal>100g 당 65kcal</kcal>
+        <detail>철분과 엽산이 많아 빈혈 예방에 도움을 준다. 타우린 성분이 있어 피로회복에 도움이 된다. 좋지 않은 콜레스테롤 농도를 낮춰준다. 간의 해독에 도움을 준다. 칼로리와 지방이 낮고 고단백 식품으로 다이어트에 도움을 준다. 단백질과 비타민 B군, 칼슘이 풍부하다. 항산화 효과가 있어 피부에 좋다.</detail>
     </food>
     <food>
         <name>크림치즈</name>
         <expiration>14</expiration>
         <url>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Philly_cream_cheese.jpg/330px-Philly_cream_cheese.jpg</url>
+        <kcal>100g 당 342kcal</kcal>
+        <detail></detail>
     </food>
     <food>
         <name>버터</name>
         <expiration>30</expiration>
         <url>https://cdn.pixabay.com/photo/2018/02/25/07/15/food-3179853_1280.jpg</url>
+        <kcal>100g 당 716kcal</kcal>
+        <detail></detail>
     </food>
     <food>
         <name>닭고기</name>
         <expiration>2</expiration>
         <url>https://cdn.pixabay.com/photo/2016/12/05/20/35/chicken-1884873_1280.jpg</url>
+        <kcal>100g 당 239kcal</kcal>
+        <detail>단백질이 많아 두뇌 성장을 돕는다. 필수 아미노산이 풍부하여 스트레스를 이겨내는데 도움을 준다. 암 예방 뿐만 아니라 동맥경화, 심장병 등의 심혈관 질병 예방에도 효능이 있다. 다른 육류에 비해 섬유질이 가늘고 연해 소화흡수가 잘된다. 필수 아미노산이 풍부하여 혈중 콜레스테롤 수치를 낮추어준다.</detail>
     </food>
     <food>
-        <name>피망</name>
+        <name>파프리카</name>
         <expiration>4</expiration>
         <url>https://cdn.pixabay.com/photo/2016/03/18/00/58/bell-peppers-1264209_1280.jpg</url>
+        <kcal>100g 당 20kcal</kcal>
+        <detail>항산화 성분이 풍부하여 세포의 변종과 손상을 막는다. 노안 현상을 완화해준다. 붉은 파프리카는 철분이 많이 들어있어 빈혈에 도움이 된다. 혈당을 낮춰준다. 노란 파프리카는 피라진 성분이 많아 성인병 예방에 효과적이다. 초록 파프리카는 칼로리가 낮아 다이어트에 효과적이며, 지방 분해 효과가 있다.</detail>
     </food>
     <food>
         <name>무</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2015/03/28/18/13/icicle-radishes-696288_1280.jpg</url>
+        <kcal>100g 당 15kcal</kcal>
+        <detail>껍질에 비타민 C가 많이 함유되어 있다. 체내 독소와 노폐물을 배출해주는 역할을 한다. 식이섬유가 풍부하여 장 운동을 활발하게 해준다. 각종 영양분 분해 효소가 있어 소화불량에 도움을 준다. 체내의 니코틴을 밖으로 내보내는 역할을 한다. 수분이 많고 상한 목을 보호해준다.</detail>
     </food>
     <food>
         <name>오징어</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2016/06/01/10/21/food-1428735_1280.jpg</url>
+        <kcal>100g 당 92kcal</kcal>
+        <detail>고단백 저칼로리 식품으로 다이어트에 효과적이다. 타우린 성분이 있어 간 해독을 도와준다. 불포화지방산이 풍부해 두뇌발달, 치매예방에 효과적이다. 셀레늄 성분이 항산화 작용을 하고 면역력을 높여준다. 심장병, 당뇨병 예방에 효과가 좋다. 피로회복과 기력향상에 탁월한 효능이 있다.</detail>
     </food>
     <food>
         <name>굴</name>
         <expiration>7</expiration>
         <url>https://cdn.pixabay.com/photo/2016/07/16/22/19/oyster-1522835_1280.jpg</url>
+        <kcal>100g 당 198kcal</kcal>
+        <detail>필수 아미노산과 칼륨 함량이 많다. 미네랄이 풍부하다. 철분이 풍부하여 빈혈 예방에 도움을 준다. 아연의 함량이 높아 남성 호르몬 분비를 촉진시켜준다. 칼로리와 지방 함량이 낮아 다이어트에 도움을 준다. 멜라닌 색소를 분해하는 효과가 있어 피부를 맑고 희게 해준다. 약 알칼리성 식품으로 피를 맑게 해준다.</detail>
     </food>
     <food>
         <name>새우</name>
         <expiration>2</expiration>
         <url>https://cdn.pixabay.com/photo/2016/03/05/22/31/prawns-1239307_1280.jpg</url>
+        <kcal>100g 당 99kcal</kcal>
+        <detail>다량의 키토산이 함유되어 있어 면역력 강화에 도을 준다. 혈당을 조절해주어 당뇨의 예방에 도움을 준다. 체내의 독성 물질들을 체외로 배출시켜 주어 숙취해소와 피로회복에 효과적이다. 칼슘 성분이 풍부하여 골다공증 예방에 도움을 준다. 눈 건강 개선에 도움을 준다.</detail>
     </food>
     <food>
         <name>갈치</name>
         <expiration>2</expiration>
         <url>https://lh3.googleusercontent.com/proxy/_mVLk7mzQixvL2D39E06vDoJKad1nMgItRDQH-I3JCjpZ3L_Vqz9_0do6OAQuiCoa5-_fh6GgY2sEQUd63BR4Gek2zX8CXdlQW3FqQuOUfk3q_Fmchv4yfOAA32Wt5lw</url>
+        <kcal>100g 당 149kcal</kcal>
+        <detail>칼슘 성분이 풍부해 골다공증 예방 및 성장기인 어린아이에게도 도움이 된다. 두뇌의 쇠퇴를 늦춰주고 두뇌 성장에 도움을 준다. 비타민 A가 풍부하게 들어있어 눈의 건강을 향상시켜준다. 필수 아미노산과 단백질 성분이 풍부하다. 불포화지방산이 함유되어 있어 혈관 건강에 좋다. 간을 보호해주고 원기회복에 좋다.</detail>
     </food>
     <food>
         <name>콩나물</name>
         <expiration>10</expiration>
         <url>https://cdn.pixabay.com/photo/2020/03/26/12/31/mung-beans-4970350_1280.jpg</url>
+        <kcal>100g 당 37kcal</kcal>
+        <detail>많은 양의 효소가 함유되어 있어 소화에 도움을 준다. 배변 활동에 도움을 주어 대장암 예방에 좋다. 적혈구 수치를 적정량 유지해주어 빈혈 예방에 도움을 준다. 오메가-3 지방산이 함유되어 있어 심장 건강에 도움을 준다. 비타민 A가 있어 면역력 향상에 도움을 준다.</detail>
     </food>
     <food>
-        <name>안심</name>
+        <name>소고기</name>
         <expiration>4</expiration>
         <url>https://cdn.pixabay.com/photo/2018/02/08/15/02/meat-3139641_1280.jpg</url>
+        <kcal>100g 당 148kcal</kcal>
+        <detail>비타민 B12가 다량 함유되어 있어 빈혈 예방에 도움을 준다. 필수 아미노산과 단백질이 다량 함유되어 있어 면역력 증진에 효과적이다. 비타민 A가 있어 야맹증 예방과 눈 건강에 도움을 준다. 지방 함유량이 낮고 단백질 함유량이 높아 다이어트에 도움이 된다. 카르티닌 성분이 있어 지방 연소의 활성화를 도와준다.</detail>
     </food>
     <food>
         <name>돼지고기</name>
         <expiration>3</expiration>
         <url>https://cdn.pixabay.com/photo/2016/01/05/09/48/pork-1122171_1280.jpg</url>
+        <kcal>100g 당 242kcal</kcal>
+        <detail>소고기보다 10배 많은 비타민 B가 있어 피로회복에 효과적이다. 철이 많고 흡수율이 높아 빈혈에 좋다. 미네랄이 다량 함유되어 있어 성장기 어린이에게 좋다. 중금속 해독작용을 하여 미세먼지가 많을 때 섭취하면 좋다. 비타민 F가 있어 뇌질환에 좋으며 치매예방에 효과적이다.</detail>
     </food>
-
-
-
 </foods>

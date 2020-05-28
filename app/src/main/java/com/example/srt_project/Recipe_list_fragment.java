@@ -46,7 +46,7 @@ public class Recipe_list_fragment extends Fragment {
     public SwipeRefreshLayout swipeRefreshLayout;
     public String recipe_url;
     private Context mContext;
-
+    private RecyclerAdapter adapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -57,6 +57,8 @@ public class Recipe_list_fragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         //식재료 api 크롤링 주소
         recipe_url = "http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000226_1/1/1000";
+        myFirestoreList = viewGroup.findViewById(R.id.firestore_list);
+        myFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         //firestore의 recipeid를 사용해 크롤링 후 리스트 띄우기
         DocumentReference docRef = firebaseFirestore.collection(SharedPref_id.getString(mContext,"myRef")).document("recipe");
@@ -70,20 +72,9 @@ public class Recipe_list_fragment extends Fragment {
                         while (recipes.hasNext()) {
                             String recipe = recipes.next();
                             recipe_list.add(recipe);
-
-
                         }
                         new Description().execute();
-                        final Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                myFirestoreList = viewGroup.findViewById(R.id.firestore_list);
-                                myFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));
-                                RecyclerAdapter adapter = new RecyclerAdapter(recipe_detail_list);
-                                myFirestoreList.setAdapter(adapter);
-                            }
-                        }, 1500);
+
 
                     }
                 }
@@ -135,6 +126,14 @@ public class Recipe_list_fragment extends Fragment {
                 e.printStackTrace();
             }
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            adapter = new RecyclerAdapter(recipe_detail_list);
+            myFirestoreList.setAdapter(adapter);
+
         }
     }
 

@@ -30,8 +30,8 @@ public class Recipe_detail_Activity extends AppCompatActivity {
     public String recipeId;
 
 
-    public String material_url;
-    public String step_url;
+    public String material_url1,material_url2,material_url3;
+    public String step_url1,step_url2,step_url3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +44,12 @@ public class Recipe_detail_Activity extends AppCompatActivity {
         material2 = (TextView)findViewById(R.id.material2);
         recipe = (TextView)findViewById(R.id.recipe);
 
-        material_url= "http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1/1000";
-        step_url="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000228_1/1/1000";
+        material_url1= "http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1/1000";
+        material_url2= "http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/1001/2000";
+        material_url3= "http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000227_1/2001/3000";
+        step_url1="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000228_1/1/1000";
+        step_url2="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000228_1/1001/2000";
+        step_url3="http://211.237.50.150:7080/openapi/2e736f9835dcd6eeb1f1ce6042c471dc83d0385b1dfec20d8a062611836c2340/xml/Grid_20150827000000000228_1/2001/3000";
 
         Bundle bundle = getIntent().getExtras();
         recipeId = bundle.getString("recipe_id");
@@ -68,8 +72,14 @@ public class Recipe_detail_Activity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             try{
-                Document doc = Jsoup.connect(material_url).get();
-                Elements materials = doc.select("row");
+                Document doc1 = Jsoup.connect(material_url1).get();
+                Document doc2 = Jsoup.connect(material_url2).get();
+                Document doc3 = Jsoup.connect(material_url3).get();
+
+                Elements materials = doc1.select("row");
+                materials.addAll(doc2.select("row"));
+                materials.addAll(doc3.select("row"));
+
                 for(Element material : materials){
                     if(recipeId.equals(material.select("RECIPE_ID").text()))
                     {
@@ -99,8 +109,6 @@ public class Recipe_detail_Activity extends AppCompatActivity {
         protected void onPostExecute(Void result){
             material1.setText(material_text1);
             material2.setText(material_text2);
-            //recipy.setText(step_text);
-
         }
     }
 
@@ -113,8 +121,14 @@ public class Recipe_detail_Activity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             try{
-                Document doc = Jsoup.connect(step_url).get();
-                Elements steps = doc.select("row");
+                Document doc1 = Jsoup.connect(step_url1).get();
+                Document doc2 = Jsoup.connect(step_url2).get();
+                Document doc3 = Jsoup.connect(step_url3).get();
+
+                Elements steps = doc1.select("row");
+                steps.addAll(doc2.select("row"));
+                steps.addAll(doc3.select("row"));
+
                 for(Element step : steps){
                     if(recipeId.equals(step.select("RECIPE_ID").text()))
                     {
@@ -138,7 +152,6 @@ public class Recipe_detail_Activity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result){
             recipe.setText(step_text);
-
         }
     }
 }

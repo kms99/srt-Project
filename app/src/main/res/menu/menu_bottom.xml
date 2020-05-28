@@ -5,7 +5,7 @@
         app:showAsAction="always"
         android:enabled="true"
         android:checked="true"
-        android:title="식재료"
+        android:title="전체 식재료"
         android:icon="@drawable/ic_playlist_add_check_black_24dp"
         />
     <item android:id="@+id/tab2"
@@ -14,6 +14,6 @@
         android:icon="@drawable/ic_restaurant_black_24dp"/>
     <item android:id="@+id/tab3"
         app:showAsAction="always"
-        android:enabled="true" android:title="장바구니"
+        android:enabled="true" android:title="내 식재료"
         android:icon="@drawable/ic_shopping_basket_black_24dp"/>
 </menu>
